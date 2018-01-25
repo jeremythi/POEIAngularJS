@@ -2,23 +2,24 @@
   'use strict';
 
 
-  function FinalCtrl($location) {
-  	var vm  =  this;
-
-    vm.inputS ='';
-    vm.affiche = affiche;
+  function FinalCtrl($location, searchConfigService) {
+      var vm = this;
+      
+      vm.searchConfigService = searchConfigService;
+      vm.input = '';
+      vm.affiche = affiche;
 
     function affiche(){
-       vm.inputS;
+      vm.searchConfigService.ingredient = vm.input;
   }
 
 }
 
 
-  FinalCtrl.$inject = ['$location'];
+  FinalCtrl.$inject = ['$location', 'searchConfigService'];
 
 
   angular.module('daproject')
     .controller('FinalCtrl', FinalCtrl);
-
+    
 })();
