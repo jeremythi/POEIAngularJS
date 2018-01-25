@@ -30,6 +30,11 @@
         controller: 'detailCtrl',
         controllerAs: 'detail',
       })
+      .when('/final/final', {
+        templateUrl: 'src/app/final/final/final.html',
+        controller: 'finalCtrl',
+        controllerAs: 'final',
+      })
       .otherwise({redirectTo:'/'});
   }
    
